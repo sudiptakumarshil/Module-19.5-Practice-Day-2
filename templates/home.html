@@ -8,6 +8,34 @@
   <div class="container">
     <div class="row mt-4">
       <h4>{{ welcome_message }}</h4>
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Musician Name</th>
+            <th>Email</th>
+            <th>Album Rating</th>
+            <th>Instrument Type</th>
+            <th>Album Name</th>
+            <th>Release Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in data %}
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.musician.first_name }} {{ item.musician.first_name }}</td>
+              <td>{{ item.musician.email }}</td>
+              <td>{{ item.rating }}</td>
+              <td>{{ item.musician.instrument_type }}</td>
+              <td>{{ item.album_name }}</td>
+              <td>{{ item.release_date }}</td>
+              <td></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
   </div>
 {% endblock %}
