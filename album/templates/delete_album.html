@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Album
+{% endblock %}
+
+{% block content %}
+  {% load crispy_forms_tags %}
+  <form action="" autocomplete="off" method="POST" style="width: 50%; margin: auto;" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <h5 class="text-center">Delete Album</h5>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+    </div>
+  </form>
+{% endblock %}

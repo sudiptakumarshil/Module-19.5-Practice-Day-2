@@ -31,7 +31,12 @@
               <td>{{ item.musician.instrument_type }}</td>
               <td>{{ item.album_name }}</td>
               <td>{{ item.release_date }}</td>
-              <td></td>
+              <td>
+                {% if user.is_authenticated %}
+                  <a href="{% url 'album.edit' item.id %}" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="{% url 'album.delete' item.id %}" class="btn btn-danger btn-sm">Delete</a>
+                {% endif %}
+              </td>
             </tr>
           {% endfor %}
         </tbody>
